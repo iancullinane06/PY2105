@@ -8,6 +8,8 @@
 #include <algorithm>
 using namespace std;
 
+// If you need to edit the location of dice.dat go to line 150
+
 // Decimal to binary conversion function
 string decimalToBinary(double decimal) {
     if (decimal == 0) {
@@ -145,7 +147,7 @@ int main()
 
     // Problem 5: Dice
     ifstream file;
-    file.open("../dice.dat"); // Since executable runs from output
+    file.open("dice.dat");
     if (!file) {
         cerr << "Unable to open file dice.dat";
         return 1;
@@ -155,8 +157,13 @@ int main()
 
     // Calculate mean median and standard deviation for dice rolls
     int value;
+    bool indexVal = true; 
     while (file >> value) {
-        rolls.push_back(value);
+
+        if (!indexVal) {
+            rolls.push_back(value);
+        }
+        indexVal = !indexVal;
     }
     file.close();
 
@@ -165,7 +172,7 @@ int main()
     double stDevRolls = standardDeviationCalc(rolls.data(), rolls_size, meanRolls);
     double medianRolls = medianCalc(rolls);
 
-    cout << "\nDice Rolls - Mean = " << meanRolls << ", Standard Deviation = " << stDevRolls << ", Median = " << medianRolls << ", Difference = " << (meanRolls - medianRolls);
+    cout << "\nDice Rolls - Mean = " << meanRolls << ", Standard Deviation = " << stDevRolls << ", Median = " << medianRolls << ", Relative difference = " << 200*abs(meanRolls - medianRolls)/(meanRolls + medianRolls) << "%";
 
     return 0;
 }

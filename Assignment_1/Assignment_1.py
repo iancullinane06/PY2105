@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
-observations = range(1, 10)
-delays = [4, 10, 12, 55, 22, 15, 8, 7, 9]
+observations = range(1, 11)
+delays = [4, 10, 12, 55, 22, 15, 8, 7, 9, 8]
 mean = sum(delays) / len(delays)
 
 
@@ -12,5 +12,4 @@ plt.xlabel("Observation")
 plt.ylabel("Delay")
 plt.grid(True)
 
-plt.savefig("delays.png")
 plt.show()

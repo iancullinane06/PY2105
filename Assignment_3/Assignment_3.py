@@ -72,7 +72,6 @@ def plot_least_squares_fit(data, slope, intercept):
     plt.scatter(x, y, label="Data points")
     plt.plot(x, slope * x + intercept, color="red", label=f"Fit: y = {slope}x + {intercept}")
     plt.title("Least Squares Fit")
-    plt.errorbar(x, y, yerr=1.0, fmt='o', label="Data points")
     plt.xlabel("x")
     plt.ylabel("y")
     plt.legend()

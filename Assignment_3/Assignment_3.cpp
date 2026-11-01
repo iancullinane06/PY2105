@@ -22,7 +22,6 @@ double f3(double x) {
     return -pow(x, 4)  + 7*pow(x, 3) - 5*pow(x, 2) + 15;
 }
 
-
 int main() {
     // Problem 1 Finding the roots
     // a )

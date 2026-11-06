@@ -1,3 +1,9 @@
 *.exe
 *.venv
 *.json
+
+*/report/*
+!*/report/*.tex
+!*/report/*.bib
+!*/report/*.png
+!*/report/*.pdf
